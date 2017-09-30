@@ -115,6 +115,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       static get is() { return 'my-app'; }
 
       static get properties() {
+        window.getModule("libp2p-im")
         return {
           page: {
             type: String,

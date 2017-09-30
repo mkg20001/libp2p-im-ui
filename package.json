@@ -1,6 +1,6 @@
 {
-  "name": "polymer-starter-kit",
-  "license": "BSD-3-Clause",
+  "name": "libp2p-im-ui",
+  "license": "MIT",
   "devDependencies": {
     "eslint": "^3.19.0",
     "eslint-config-google": "^0.7.0",
@@ -10,6 +10,13 @@
     "lint": "npm run lint:javascript && polymer lint",
     "lint:javascript": "eslint . --ext js,html --ignore-path .gitignore",
     "test": "polymer test",
-    "test:integration": "polymer build # test that psk builds without error with the CLI"
+    "test:integration": "polymer build # test that psk builds without error with the CLI",
+    "start": "touch src/bundle.js && polymer serve & watchify src/bundle.js -d -v -o bundle.main.js",
+    "module-list": "cp bundle.js src/bundle.js && cat src/* | grep window.getModule | grep -v 'name => require' | sed 's|window.getModule|require|g' | sed 's/ //g' | sort | uniq >> src/bundle.js"
+  },
+  "dependencies": {
+    "libp2p-im": "file:..",
+    "polymer-cli": "^1.5.5",
+    "watchify": "^3.9.0"
   }
 }
