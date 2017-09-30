@@ -12,7 +12,7 @@
     "test": "polymer test",
     "test:integration": "polymer build # test that psk builds without error with the CLI",
     "start": "touch src/bundle.js && polymer serve & watchify src/bundle.js -d -v -o bundle.main.js",
-    "module-list": "cp bundle.js src/bundle.js && cat src/* | grep window.getModule | grep -v 'name => require' | sed 's|window.getModule|require|g' | sed 's/ //g' | sort | uniq >> src/bundle.js"
+    "module-list": "node module-list.js"
   },
   "dependencies": {
     "libp2p-im": "file:..",
