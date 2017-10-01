@@ -92,22 +92,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <script src="src/bundle.main.js"></script>
 
-  <script>
-    window.getModule("debug").save("*")
-    const IMN = window.getModule("libp2p-im")
-    const Id = window.getModule("peer-id")
-    Id.create((err, id) => {
-      if (err) throw err
-      window.node = new IMN({
-        swarm: Object.assign({
-          id
-        }, window.getModule("libp2p-im/servers")),
-        db: Math.random().toString()
-      })
-      window.node.start(console.log)
-    })
-  </script>
-
   <!-- Load your application shell -->
   <link rel="import" href="src/my-app.html">
 
