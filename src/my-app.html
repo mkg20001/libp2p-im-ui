@@ -24,7 +24,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../bower_components/paper-progress/paper-progress.html">
-<link rel="import" href="../bower_components/paper-spinner/paper-spinner.html">
+<link rel="import" href="../bower_components/paper-spinner/paper-spinner-lite.html">
 <link rel="import" href="../bower_components/paper-menu/paper-menu.html">
 <link rel="import" href="../bower_components/paper-item/paper-item.html">
 <link rel="import" href="my-icons.html">
@@ -40,9 +40,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <template>
     <custom-style>
       <style is="custom-style">
-        paper-spinner-lite.thick {
-          --paper-spinner-stroke-width: 3px;
-          --paper-spinner-stroke-height: 3px;
+        paper-spinner-lite.progress {
+          z-index: 1000;
+          width: 60px;
+          height: 60px;
+          margin-top: 12%;
+          --paper-spinner-stroke-width: 4px;
         }
       </style>
     </custom-style>
@@ -153,7 +156,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </iron-pages>
         </template>
         <template is="dom-if" if="{{!isNodeOnline}}">
-          <paper-spinner class="thick" active></paper-spinner>
+          <center><paper-spinner-lite class="progress" active></paper-spinner-lite></center>
         </template>
       </app-header-layout>
     </app-drawer-layout>
