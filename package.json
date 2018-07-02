@@ -13,11 +13,15 @@
     "test:integration": "polymer build # test that psk builds without error with the CLI",
     "start": "touch src/bundle.main.js && polymer serve & watchify bundle.js -d -v -o src/bundle.main.js",
     "build": "browserify bundle.js -d -v -o bundle.main.js && polymer build",
-    "module-list": "node module-list.js"
+    "module-list": "node module-list.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "libp2p-im": "file:..",
     "polymer-cli": "^1.5.5",
-    "watchify": "^3.9.0"
-  }
+    "watchify": "^3.9.0",
+    "snyk": "^1.88.0"
+  },
+  "snyk": true
 }
