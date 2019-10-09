@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "libp2p-im": "file:..",
-    "polymer-cli": "^1.5.5",
+    "polymer-cli": "^1.9.3",
     "watchify": "^3.9.0"
   }
 }
