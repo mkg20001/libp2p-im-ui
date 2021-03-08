@@ -18,6 +18,6 @@
   "dependencies": {
     "libp2p-im": "file:..",
     "polymer-cli": "^1.5.5",
-    "watchify": "^3.9.0"
+    "watchify": "^4.0.0"
   }
 }
